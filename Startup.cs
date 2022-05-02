@@ -6,6 +6,7 @@ using EscortBookUser.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using EscortBookUser.Repositories;
+using EscortBookUser.Services;
 
 namespace EscortBookUser
 {
@@ -26,6 +27,7 @@ namespace EscortBookUser
             services.AddTransient<IRequestLogRepository, RequestLogRepository>();
             services.AddTransient<IStatusCategoryRepository, StatusCategoryRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IAWSS3Service, AWSS3Service>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
