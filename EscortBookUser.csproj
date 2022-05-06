@@ -9,6 +9,19 @@
     <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="3.1.24" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.24" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.18" />
+    <PackageReference Include="System.Reactive" Version="4.4.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Types\" />
+    <None Remove="Attributes\" />
+    <None Remove="Handlers\" />
+    <None Remove="Backgrounds\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Types\" />
+    <Folder Include="Attributes\" />
+    <Folder Include="Handlers\" />
+    <Folder Include="Backgrounds\" />
+  </ItemGroup>
 </Project>

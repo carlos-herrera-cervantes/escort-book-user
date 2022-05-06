@@ -17,7 +17,7 @@ namespace EscortBookUser.Models
         [Column("email")]
         public string Email { get; set; }
 
-        [Column("delete")]
+        [Column("deleted")]
         public bool Delete { get; set; } = false;
     }
 }
