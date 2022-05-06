@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using EscortBookUser.Repositories;
 using EscortBookUser.Services;
+using EscortBookUser.Backgrounds;
+using EscortBookUser.Handlers;
 
 namespace EscortBookUser
 {
@@ -28,6 +30,8 @@ namespace EscortBookUser
             services.AddTransient<IStatusCategoryRepository, StatusCategoryRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IAWSS3Service, AWSS3Service>();
+            services.AddSingleton(typeof(IOperationHandler<>), typeof(OperationHandler<>));
+            services.AddHostedService<S3Consumer>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
