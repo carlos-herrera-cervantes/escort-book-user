@@ -5,27 +5,26 @@ using EscortBookUser.Contexts;
 using EscortBookUser.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace EscortBookUser.Repositories
+namespace EscortBookUser.Repositories;
+
+public class RequestLogRepository : IRequestLogRepository
 {
-    public class RequestLogRepository : IRequestLogRepository
-    {
-        #region snippet_Properties
+    #region snippet_Properties
 
-        private readonly EscortBookUserContext _context;
+    private readonly EscortBookUserContext _context;
 
-        #endregion
+    #endregion
 
-        #region snippet_Constructors
+    #region snippet_Constructors
 
-        public RequestLogRepository(EscortBookUserContext context) => _context = context;
+    public RequestLogRepository(EscortBookUserContext context) => _context = context;
 
-        #endregion
+    #endregion
 
-        #region snippet_ActionMethods
+    #region snippet_ActionMethods
 
-        public async Task<IEnumerable<RequestLog>> GetAllAsync(string userId, int page, int pageSize)
-            => await _context.RequestLogs.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+    public async Task<IEnumerable<RequestLog>> GetAllAsync(string userId, int page, int pageSize)
+        => await _context.RequestLogs.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
 
-        #endregion
-    }
+    #endregion
 }
