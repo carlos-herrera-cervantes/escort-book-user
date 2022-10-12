@@ -2,14 +2,13 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using EscortBookUser.Models;
 
-namespace EscortBookUser.Repositories
+namespace EscortBookUser.Repositories;
+
+public interface IDictumRepository
 {
-    public interface IDictumRepository
-    {
-         Task<IEnumerable<Dictum>> GetAllAsync(string userId, int page, int pageSize);
+    Task<IEnumerable<Dictum>> GetAllAsync(string userId, int page, int pageSize);
 
-         Task CreateAsync(Dictum dictum);
+    Task CreateAsync(Dictum dictum);
 
-         Task DeleteByIdAsync(string id);
-    }
+    Task DeleteByIdAsync(string id);
 }

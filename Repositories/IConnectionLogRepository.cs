@@ -1,10 +1,9 @@
 using System.Threading.Tasks;
 using EscortBookUser.Models;
 
-namespace EscortBookUser.Repositories
+namespace EscortBookUser.Repositories;
+
+public interface IConnectionLogRepository
 {
-    public interface IConnectionLogRepository
-    {
-        Task<ConnectionLog> GetByIdAsync(string userId);    
-    }
+    Task<ConnectionLog> GetByIdAsync(string userId);
 }

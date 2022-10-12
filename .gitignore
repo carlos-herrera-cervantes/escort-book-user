@@ -26,3 +26,4 @@ bin/
 appsettings*
 Properties/
 .vs
+.env
