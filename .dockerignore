@@ -1,0 +1,6 @@
+.github
+.env
+.editorconfig
+.gitignore
+appsettings.*
+README.md
